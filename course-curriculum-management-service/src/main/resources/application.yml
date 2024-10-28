@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: course-curriculum-management-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/development
+          jwk-set-uri: http://localhost:8085/realms/development/protocol/openid-connect/certs
+server:
+  port: 8100
+
+

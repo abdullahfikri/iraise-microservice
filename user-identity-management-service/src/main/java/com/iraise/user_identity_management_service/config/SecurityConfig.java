@@ -2,6 +2,10 @@ package com.iraise.user_identity_management_service.config;
 
 
 import com.nimbusds.jose.shaded.gson.internal.LinkedTreeMap;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -14,10 +18,15 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,11 +41,20 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/user-identity-management/auth/login").permitAll()
                         .requestMatchers("/user-identity-management/account/forgot-password").permitAll()
-                        .anyRequest().authenticated())
+                        .anyRequest().authenticated()
+                        )
+//                .addFilterBefore(customJWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)));
         return http.build();
     }
+
+//    @Bean
+//    public CustomJWTFilter customJWTFilter() {
+//        return new CustomJWTFilter();
+//    }
+
+
 
     @Bean
     JwtAuthenticationConverter jwtAuthenticationConverter() {
@@ -46,11 +64,13 @@ public class SecurityConfig {
             Object client = resourceAccess.get("user-identity-management");
             LinkedTreeMap<String, List<String>> clientRoleMap = (LinkedTreeMap<String, List<String>>) client;
 
-//            if (clientRoleMap.isEmpty()){
-//                throw new HttpClientErrorException(HttpStatus.UNAUTHORIZED, "User is not authorized");
-//            }
 
-            List<String> clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
+            List<String> clientRoles;
+            if(clientRoleMap != null) {
+                clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
+            } else {
+                clientRoles = new ArrayList<>();
+            }
 //             print roles
             System.out.println(Arrays.toString(clientRoles.toArray()));
 
@@ -65,3 +85,4 @@ public class SecurityConfig {
         return jwtAuthenticationConverter;
     }
 }
+

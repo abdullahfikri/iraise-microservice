@@ -9,5 +9,5 @@ spring:
           jwk-set-uri: http://localhost:8085/realms/development/protocol/openid-connect/certs
 server:
   port: 8100
-
+  max-http-request-header-size: 10KB
 

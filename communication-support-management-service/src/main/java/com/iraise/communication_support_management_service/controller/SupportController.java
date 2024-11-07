@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/communication-support")
 public class SupportController {
     @PostMapping("/layanan-aduan")
-    @PreAuthorize("hasAnyAuthority('Layanan Aduan')")
+    @PreAuthorize("hasAnyAuthority('Membuat Aduan')")
     public String requestLayananAduan(){
-        return "Layanan Aduan";
+        return "Membuat Aduan";
     }
 
     @PostMapping("/layanan-aduan/proses")
-    @PreAuthorize("hasAnyAuthority('Memproses pengajuan Layanan Aduan')")
+    @PreAuthorize("hasAnyAuthority('Memproses Aduan User')")
     public String prosesRequestLayananAduan(){
-        return "Memproses pengajuan Layanan Aduan";
+        return "Memproses Aduan User";
     }
 
     @GetMapping("/tutorial/download/{level}")

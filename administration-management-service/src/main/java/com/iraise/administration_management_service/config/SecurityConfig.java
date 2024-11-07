@@ -17,10 +17,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Configuration
@@ -46,8 +43,13 @@ public class SecurityConfig {
 //            if (clientRoleMap.isEmpty()){
 //                throw new HttpClientErrorException(HttpStatus.UNAUTHORIZED, "User is not authorized");
 //            }
+            List<String> clientRoles;
+            if(clientRoleMap != null) {
+                clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
+            } else {
+                clientRoles = new ArrayList<>();
+            }
 
-            List<String> clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
 //             print roles
 //            System.out.println(Arrays.toString(clientRoles.toArray()));
 

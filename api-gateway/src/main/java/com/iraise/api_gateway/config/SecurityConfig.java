@@ -41,6 +41,7 @@ public class SecurityConfig {
 //                                .pathMatchers("/user-identity-management-service/user-identity-management/auth/login").permitAll()
 //                                .pathMatchers("/user-identity-management-service/user-identity-management/account/forgot-password").permitAll()
 //                                .anyExchange().authenticated())
+                        .oauth2Client(withDefaults())
                         .csrf(ServerHttpSecurity.CsrfSpec::disable)
 //                        .oauth2Login(withDefaults())
 //                        .logout(logout -> logout.logoutSuccessHandler(oidcLoggoutSuccessHandler()))

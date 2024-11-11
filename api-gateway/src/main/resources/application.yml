@@ -13,7 +13,19 @@ spring:
         jwt:
           issuer-uri: http://localhost:8085/realms/development
           jwk-set-uri: http://localhost:8085/realms/development/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: iraise-dev
+            client-secret: GcE1IPmJ2YnVlzMBxwS2ygQuHYvbvmvj
+            scope: openid
+            authorization-grant-type: authorization_code
+            client-name: Keycloak
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8085/realms/development
 
 
 server:
   port: 8765
+  max-http-request-header-size: 10KB

@@ -20,19 +20,19 @@ public class DosenController {
     }
 
     @PostMapping("")
-    @PreAuthorize("hasAuthority('Menginput/mengelola data dosen')")
+    @PreAuthorize("hasAuthority('Mengelola data dosen (Menginput data)')")
     public String createDosen(){
         return "created dosen university";
     }
 
     @GetMapping("/{dosenId}")
-    @PreAuthorize("hasAuthority('Menginput/mengelola data dosen')")
+    @PreAuthorize("hasAuthority('Mengelola data dosen (Melihat data)')")
     public String findDosen(@PathVariable("dosenId") Long dosenId){
         return "find dosen university";
     }
 
     @PutMapping("/{dosenId}")
-    @PreAuthorize("hasAuthority('Menginput/mengelola data dosen')")
+    @PreAuthorize("hasAuthority('Mengelola data dosen (Mengupdate data)')")
     public String updateDosen(@PathVariable("dosenId") Long dosenId){
         return "updated dosen university";
     }
@@ -68,19 +68,19 @@ public class DosenController {
     }
 
     @GetMapping("/{dosenId}/riwayat-pendidikan")
-    @PreAuthorize("hasAuthority('Melihat dan mengelola riwayat pendidikan dosen')")
+    @PreAuthorize("hasAuthority('Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)')")
     public String findHistoryPendidikanDosen(@PathVariable("dosenId") Long dosenId){
         return "find history pendidikan dosen: " + dosenId;
     }
 
     @PostMapping("/{dosenId}/riwayat-pendidikan")
-    @PreAuthorize("hasAuthority('Melihat dan mengelola riwayat pendidikan dosen')")
+    @PreAuthorize("hasAuthority('Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)')")
     public String createHistoryPendidikan(@PathVariable("dosenId") Long dosenId){
         return "created history pendidikan dosen: " + dosenId;
     }
 
     @PutMapping("/{dosenId}/riwayat-pendidikan")
-    @PreAuthorize("hasAuthority('Melihat dan mengelola riwayat pendidikan dosen')")
+    @PreAuthorize("hasAuthority('Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)')")
     public String updateHistoryPendidikan(@PathVariable("dosenId") Long dosenId){
         return "updated history pendidikan dosen: " + dosenId;
     }

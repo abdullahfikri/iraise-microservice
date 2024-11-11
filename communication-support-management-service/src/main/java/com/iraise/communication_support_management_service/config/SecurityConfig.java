@@ -44,7 +44,12 @@ public class SecurityConfig {
 //                throw new HttpClientErrorException(HttpStatus.UNAUTHORIZED, "User is not authorized");
 //            }
 
-            List<String> clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
+            List<String> clientRoles;
+            if(clientRoleMap != null) {
+                clientRoles = new ArrayList<>(clientRoleMap.get("roles"));
+            } else {
+                clientRoles = new ArrayList<>();
+            }
 //             print roles
 //            System.out.println(Arrays.toString(clientRoles.toArray()));
 

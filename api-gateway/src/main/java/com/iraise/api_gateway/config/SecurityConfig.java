@@ -35,13 +35,14 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
 
                 http
+//                        .authorizeExchange(auth -> auth
+//                                .pathMatchers("/user-identity-management/auth/login").permitAll()
+//                                .pathMatchers("/user-identity-management/account/forgot-password").permitAll()
+//                                .pathMatchers("/user-identity-management-service/user-identity-management/auth/login").permitAll()
+//                                .pathMatchers("/user-identity-management-service/user-identity-management/account/forgot-password").permitAll()
+//                                .anyExchange().authenticated())
+                        .oauth2Client(withDefaults())
                         .csrf(ServerHttpSecurity.CsrfSpec::disable)
-                        .authorizeExchange(auth -> auth
-                                .pathMatchers("/user-identity-management/auth/login").permitAll()
-                                .pathMatchers("/user-identity-management-service/user-identity-management/auth/login").permitAll()
-                                .pathMatchers("/user-identity-management/account/forgot-password").permitAll()
-                                .pathMatchers("/user-identity-management-service/user-identity-management/account/forgot-password").permitAll()
-                                .anyExchange().authenticated())
 //                        .oauth2Login(withDefaults())
 //                        .logout(logout -> logout.logoutSuccessHandler(oidcLoggoutSuccessHandler()))
                         .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));

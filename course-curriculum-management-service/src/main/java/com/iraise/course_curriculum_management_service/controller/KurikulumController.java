@@ -14,19 +14,19 @@ public class KurikulumController {
     }
 
     @PostMapping("")
-    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Input/edit)')")
+    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Membuat kurikulum)')")
     public String createKurikulum() {
         return "Created kurikulum prodi";
     }
 
     @GetMapping("/{kurikulumId}")
-    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Input/edit)')")
+    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Melihat kurikulum)')")
     public String getKurikulum(@PathVariable("kurikulumId") String kurikulumId) {
         return "Get kurikulum: " + kurikulumId ;
     }
 
     @PutMapping("/{kurikulumId}")
-    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Input/edit)')")
+    @PreAuthorize("hasAuthority('Mengelola Kurikulum (Mengupdate kurikulum)')")
     public String editKurikulum(@PathVariable("kurikulumId") String kurikulumId) {
         return "Update kurikulum: " + kurikulumId ;
     }

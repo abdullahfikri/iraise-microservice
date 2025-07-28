@@ -5,8 +5,14 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8085/realms/development
-          jwk-set-uri: http://localhost:8085/realms/development/protocol/openid-connect/certs
+          issuer-uri: http://keycloak:8080/realms/development
+          jwk-set-uri: http://keycloak:8080/realms/development/protocol/openid-connect/certs
+#          issuer-uri: http://localhost:8085/realms/development
+#          jwk-set-uri: http://localhost:8085/realms/development/protocol/openid-connect/certs
 server:
   port: 8120
   max-http-request-header-size: 10KB
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/

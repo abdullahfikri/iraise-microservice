@@ -1,0 +1,161 @@
+[ {
+  "id" : "f26d8ecf-633f-49ab-9eca-cc219b67fa3e",
+  "username" : "adminaka",
+  "firstName" : "adminaka",
+  "lastName" : "adminaka",
+  "email" : "adminaka@adminaka",
+  "emailVerified" : false,
+  "createdTimestamp" : 1732282774596,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "c50a88d8-bb5d-46e7-8518-3ee7b8bd28df",
+  "username" : "admincuti",
+  "firstName" : "admincuti",
+  "lastName" : "admincuti",
+  "email" : "admin@admin.com",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730859348215,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "bd5c90b5-23e2-49a7-9344-4b751dbfe889",
+  "username" : "adminlayanan",
+  "firstName" : "adminlayanan",
+  "lastName" : "adminlayanan",
+  "email" : "admin1@admin.com",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730885227276,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "b78a3d67-613d-4647-8eaa-f394ef6e5506",
+  "username" : "adminprodi",
+  "firstName" : "adminprodi",
+  "lastName" : "adminprodi",
+  "email" : "test@test1",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730097495734,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "0a58cf7d-15eb-4cf3-9941-8c07f569c10b",
+  "username" : "adminrealm",
+  "firstName" : "adminrealm",
+  "lastName" : "adminrealm",
+  "email" : "admin@realm.com",
+  "emailVerified" : false,
+  "createdTimestamp" : 1735737570908,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "89d04bbb-664d-4baa-810b-7400055a478e",
+  "username" : "dosen",
+  "firstName" : "dosen",
+  "lastName" : "dosen",
+  "email" : "dosen@mail",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730176202549,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "69de9c72-1e09-41fd-8623-76059f439626",
+  "username" : "mahasiswa",
+  "firstName" : "mhs",
+  "lastName" : "mhs",
+  "email" : "mhs@mhs",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730519026068,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+}, {
+  "id" : "92db33ba-fa5d-47f2-9c17-53cf1a57ab82",
+  "username" : "prodi",
+  "firstName" : "prodi",
+  "lastName" : "prodi",
+  "email" : "test@test",
+  "emailVerified" : false,
+  "createdTimestamp" : 1730097024498,
+  "enabled" : true,
+  "totp" : false,
+  "disableableCredentialTypes" : [ ],
+  "requiredActions" : [ ],
+  "notBefore" : 0,
+  "access" : {
+    "manageGroupMembership" : true,
+    "view" : true,
+    "mapRoles" : true,
+    "impersonate" : true,
+    "manage" : true
+  }
+} ]

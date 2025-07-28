@@ -21,7 +21,7 @@ public class RouteConfig {
                 .route("administration-management-service", r-> r
                         .method("GET", "POST")
                         .and()
-                        .path("/academic-affairs/cuti/**", "/academic-affairs/wisuda/**", "/academic-affairs/prodi/**", "/academic-affairs/akademik/**")
+                        .path("/academic-affairs/cuti","/academic-affairs/cuti/**", "/academic-affairs/wisuda/**", "/academic-affairs/prodi/**", "/academic-affairs/akademik/**")
                         .filters(f -> f.prefixPath("/administration-management-service"))
                         .uri("http://localhost:8765")
                 )
@@ -68,8 +68,6 @@ public class RouteConfig {
                         .filters(f -> f.prefixPath("/performance-assessment-management-service"))
                         .uri("http://localhost:8765")
                 )
-
-
                 .build();
     }
 

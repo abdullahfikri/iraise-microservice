@@ -1,0 +1,141 @@
+services:
+  keycloak:
+    build: ./keycloak
+    image: iraise/keycloak:1.0
+    ports:
+      - "8085:8080"
+    environment:
+      - KC_HOSTNAME=http://keycloak:8080/
+      - KC_HOSTNAME_BACKCHANNEL_DYNAMIC=true
+
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/keycloak/bin/kc.sh", "health" ]
+      interval: 45s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+  discovery-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=discovery-server/target/discovery-server-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8761
+    image: iraise/discovery-server:1.0
+    ports:
+      - "8761:8761"
+    environment:
+      - SERVER_PORT=8761
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  administration-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=administration-management-service/target/administration-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8120
+    image: iraise/administration-management-service:1.0
+    ports:
+      - "8120:8120"
+    environment:
+      - SERVER_PORT=8120
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  communication-support-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=communication-support-management-service/target/communication-support-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8130
+    image: iraise/communication-support-management-service:1.0
+    ports:
+      - "8130:8130"
+    environment:
+      - SERVER_PORT=8130
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  course-curriculum-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=course-curriculum-management-service/target/course-curriculum-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8100
+    image: iraise/course-curriculum-management-service:1.0
+    ports:
+      - "8100:8100"
+    environment:
+      - SERVER_PORT=8100
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  performance-assessment-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=performance-assessment-management-service/target/performance-assessment-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8110
+    image: iraise/performance-assessment-management-service:1.0
+    ports:
+      - "8110:8110"
+    environment:
+      - SERVER_PORT=8110
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  student-lecture-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=student-lecture-management-service/target/student-lecture-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8090
+    image: iraise/student-lecture-management-service:1.0
+    ports:
+      - "8090:8090"
+    environment:
+      - SERVER_PORT=8090
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  user-identity-management-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=user-identity-management-service/target/user-identity-management-service-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8011
+    image: iraise/user-identity-management-service:1.0
+    ports:
+      - "8011:8011"
+    environment:
+      - SERVER_PORT=8011
+    depends_on:
+      keycloak:
+        condition: service_healthy
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JAR_FILE_PATH=api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar
+        - APP_PORT=8765
+    image: iraise/api-gateway:1.0
+    ports:
+      - "8765:8765"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - SERVER_PORT=8765
+    depends_on:
+      keycloak:
+        condition: service_healthy
+networks:
+  default:
+    name: microservice-network

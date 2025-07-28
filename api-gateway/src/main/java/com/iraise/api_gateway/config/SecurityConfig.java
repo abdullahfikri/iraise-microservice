@@ -33,7 +33,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-
+        System.out.println("securityWebFilterChain invoke");
                 http
 //                        .authorizeExchange(auth -> auth
 //                                .pathMatchers("/user-identity-management/auth/login").permitAll()
@@ -41,9 +41,9 @@ public class SecurityConfig {
 //                                .pathMatchers("/user-identity-management-service/user-identity-management/auth/login").permitAll()
 //                                .pathMatchers("/user-identity-management-service/user-identity-management/account/forgot-password").permitAll()
 //                                .anyExchange().authenticated())
-                        .oauth2Client(withDefaults())
                         .csrf(ServerHttpSecurity.CsrfSpec::disable)
 //                        .oauth2Login(withDefaults())
+//                        .oauth2Client(withDefaults());
 //                        .logout(logout -> logout.logoutSuccessHandler(oidcLoggoutSuccessHandler()))
                         .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
         return  http.build();

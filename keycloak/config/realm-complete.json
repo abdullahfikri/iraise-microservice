@@ -1,0 +1,4399 @@
+{
+    "id": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+    "realm": "development",
+    "notBefore": 0,
+    "defaultSignatureAlgorithm": "RS256",
+    "revokeRefreshToken": false,
+    "refreshTokenMaxReuse": 0,
+    "accessTokenLifespan": 3600,
+    "accessTokenLifespanForImplicitFlow": 900,
+    "ssoSessionIdleTimeout": 2592000,
+    "ssoSessionMaxLifespan": 2592000,
+    "ssoSessionIdleTimeoutRememberMe": 0,
+    "ssoSessionMaxLifespanRememberMe": 0,
+    "offlineSessionIdleTimeout": 2592000,
+    "offlineSessionMaxLifespanEnabled": false,
+    "offlineSessionMaxLifespan": 5184000,
+    "clientSessionIdleTimeout": 0,
+    "clientSessionMaxLifespan": 0,
+    "clientOfflineSessionIdleTimeout": 0,
+    "clientOfflineSessionMaxLifespan": 0,
+    "accessCodeLifespan": 60,
+    "accessCodeLifespanUserAction": 300,
+    "accessCodeLifespanLogin": 1800,
+    "actionTokenGeneratedByAdminLifespan": 43200,
+    "actionTokenGeneratedByUserLifespan": 300,
+    "oauth2DeviceCodeLifespan": 780,
+    "oauth2DevicePollingInterval": 5,
+    "enabled": true,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "registrationEmailAsUsername": false,
+    "rememberMe": false,
+    "verifyEmail": false,
+    "loginWithEmailAllowed": true,
+    "duplicateEmailsAllowed": false,
+    "resetPasswordAllowed": false,
+    "editUsernameAllowed": false,
+    "bruteForceProtected": false,
+    "permanentLockout": false,
+    "maxTemporaryLockouts": 0,
+    "maxFailureWaitSeconds": 900,
+    "minimumQuickLoginWaitSeconds": 60,
+    "waitIncrementSeconds": 60,
+    "quickLoginCheckMilliSeconds": 1000,
+    "maxDeltaTimeSeconds": 43200,
+    "failureFactor": 30,
+    "roles": {
+        "realm": [
+            {
+                "id": "79f868d9-959d-45d3-bb92-d8a9f32ff7dd",
+                "name": "admin",
+                "description": "",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "73901348-59b2-4e84-a709-c4fc7a3f47d6",
+                "name": "default-roles-development",
+                "description": "${role_default-roles}",
+                "composite": true,
+                "composites": {
+                    "realm": ["offline_access", "uma_authorization"],
+                    "client": {
+                        "account": ["manage-account", "view-profile"]
+                    }
+                },
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "01da7cfe-47cd-48db-b026-1961faac9e66",
+                "name": "user",
+                "description": "",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "b4d44c88-5ad2-4463-80c0-0e303efb1b52",
+                "name": "manager",
+                "description": "",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "fa758557-4e4a-4541-9f05-ee3132ce9644",
+                "name": "uma_authorization",
+                "description": "${role_uma_authorization}",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "a2619e69-d0f4-4ed2-8b09-82aa1a9f6650",
+                "name": "offline_access",
+                "description": "${role_offline-access}",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            },
+            {
+                "id": "860695c0-70ae-4170-b446-731f51257150",
+                "name": "owners",
+                "description": "",
+                "composite": false,
+                "clientRole": false,
+                "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8",
+                "attributes": {}
+            }
+        ],
+        "client": {
+            "realm-management": [
+                {
+                    "id": "ed5545b7-cc27-4b88-8da1-168364a04a01",
+                    "name": "query-clients",
+                    "description": "${role_query-clients}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "39c55c05-f09b-4729-8dd2-0ee049c905fd",
+                    "name": "query-users",
+                    "description": "${role_query-users}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "8f249d70-522c-450f-b32f-0ad92a400b81",
+                    "name": "view-realm",
+                    "description": "${role_view-realm}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "0ad6ec5d-ea0c-43d7-ab6f-eb55fb0eb231",
+                    "name": "realm-admin",
+                    "description": "${role_realm-admin}",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "realm-management": [
+                                "query-clients",
+                                "query-users",
+                                "view-realm",
+                                "view-authorization",
+                                "manage-authorization",
+                                "manage-identity-providers",
+                                "view-identity-providers",
+                                "manage-realm",
+                                "query-realms",
+                                "view-clients",
+                                "manage-events",
+                                "manage-clients",
+                                "impersonation",
+                                "view-users",
+                                "query-groups",
+                                "create-client",
+                                "manage-users",
+                                "view-events"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "70ddb094-b248-45e5-a70a-cf6e509bfd6e",
+                    "name": "view-authorization",
+                    "description": "${role_view-authorization}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "275b046e-852f-4b50-8b80-df08cd94bc84",
+                    "name": "manage-authorization",
+                    "description": "${role_manage-authorization}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "8450c48d-ca17-409e-8a56-d0fd368f6207",
+                    "name": "manage-identity-providers",
+                    "description": "${role_manage-identity-providers}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "533dffeb-25ae-4962-9217-a7b0203c5f79",
+                    "name": "view-identity-providers",
+                    "description": "${role_view-identity-providers}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "9b0d3351-5fc7-4fce-89bb-0bcafe80235a",
+                    "name": "manage-realm",
+                    "description": "${role_manage-realm}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "539e22d2-232b-4874-81ac-93c0e5c6504f",
+                    "name": "query-realms",
+                    "description": "${role_query-realms}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "d988d476-00f3-433d-b73f-0856a86cfb7a",
+                    "name": "manage-events",
+                    "description": "${role_manage-events}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "a8975a11-1eb8-49f4-a001-de9a80e27430",
+                    "name": "view-clients",
+                    "description": "${role_view-clients}",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "realm-management": ["query-clients"]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "c4fb1f53-89b4-4f14-bc1a-808182aa94d0",
+                    "name": "manage-clients",
+                    "description": "${role_manage-clients}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "59ee21a3-2262-4c15-8fbd-d5d6816817ff",
+                    "name": "impersonation",
+                    "description": "${role_impersonation}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "c7a5f2d2-7dde-469c-8eed-d2901d7408fb",
+                    "name": "view-users",
+                    "description": "${role_view-users}",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "realm-management": ["query-users", "query-groups"]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "49c9c4f4-219d-405c-baf0-45507d1682f6",
+                    "name": "create-client",
+                    "description": "${role_create-client}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "9160a58a-ae63-4cf8-9fba-18689ad27afa",
+                    "name": "manage-users",
+                    "description": "${role_manage-users}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "0a01551f-de42-4a33-8aeb-d71297ead791",
+                    "name": "query-groups",
+                    "description": "${role_query-groups}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                },
+                {
+                    "id": "2eaf5dff-88eb-493e-963e-6e799ff06a59",
+                    "name": "view-events",
+                    "description": "${role_view-events}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+                    "attributes": {}
+                }
+            ],
+            "academic-courses": [
+                {
+                    "id": "849a182d-a956-4650-8221-938cb33a8c35",
+                    "name": "Melihat kelas kuliah prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "dd510f41-41a9-4dcf-a1b3-af41576ec3e7",
+                    "name": "Membuka/Tutup Pengisian Nilai Mahasiswa oleh Dosen",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "ee9380c0-336c-4444-a11d-cedee9e25f58",
+                    "name": "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Mahasiswa)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "48e74577-427b-4402-a4f1-c8ad7cf8403d",
+                    "name": "Mengelola matakuliah prodi (Melihat matakuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "0babc3db-7355-4b50-afb8-f757b49aa2f7",
+                    "name": "Mengelola matakuliah prodi (Membuat matakuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "02bf5239-7568-4853-90ae-5074bfd81c01",
+                    "name": "Mengelola kelas prodi (Melihat kelas kuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "f209817e-5ce9-483a-ab1b-a1e571e1a6b3",
+                    "name": "List Kurikulum Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "52fad0e8-6f8c-4066-9814-7d3cc92b2aaf",
+                    "name": "Mengelola Kurikulum (Melihat kurikulum)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "47a9e138-286f-4c87-bce3-8c363a0e073c",
+                    "name": "Mengelola Kurikulum (Mengupdate kurikulum)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "73e8037b-ca00-4ce9-aa7e-886ddcb6ff78",
+                    "name": "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "3fec6b77-4c41-4a53-a559-38fca7c71667",
+                    "name": "Melihat list mata kuliah prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "3b9d64d8-32a0-4fde-b183-74ec2b782ad6",
+                    "name": "Mengelola kelas prodi (Membuat kelas kuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "64fc9c4b-4f91-43e7-89df-a5bd52bb9d0c",
+                    "name": "Mengelola matakuliah prodi (Mengupdate matakuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "d2ca9f72-d5f0-45d2-a9b3-bb878d6c7d80",
+                    "name": "Melihat Jadwal Kuliah Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "44e9cee7-ee06-48ae-97bb-f3a26f4f70e2",
+                    "name": "Membuka/Tutup jadwal pengajuan cuti kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "223c9f2f-009f-42bf-9833-c3085b8a26a6",
+                    "name": "Melihat Jadwal Kuliah Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "641e1a1a-e2b0-4537-b251-4a80983ecca4",
+                    "name": "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "3b723999-46a0-448a-8d8f-3ca0cb75c05b",
+                    "name": "Mengelola kelas prodi (Mengupdate kelas kuliah)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "6d0bae8f-3195-406f-84a2-1c27a772e716",
+                    "name": "Membuka/Tutup Pengisian KRS",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "11b377cc-437a-453d-8eaf-cc6f1d725d6a",
+                    "name": "Melihat Jadwal Kuliah Dosen",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                },
+                {
+                    "id": "cc74c671-0e9f-4c6c-9678-65bbfb24e8c6",
+                    "name": "Mengelola Kurikulum (Membuat kurikulum)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+                    "attributes": {}
+                }
+            ],
+            "security-admin-console": [],
+            "xyz_client": [
+                {
+                    "id": "1882c6d5-b484-497b-a9a5-20f45d39729c",
+                    "name": "uma_protection",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "dcf85b67-8c01-4607-8394-0f33f70389dc",
+                    "attributes": {}
+                }
+            ],
+            "academic-affairs": [
+                {
+                    "id": "d40dc0bc-3b8f-45c1-9d8b-23e234e5e4b5",
+                    "name": "Memproses Pengajuan Cuti Kuliah yang sudah disetujui",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "6d382b04-f7ce-4d71-b800-546e7c8da480",
+                    "name": "Melihat Kalender Akademik",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "a9761f07-2c9a-4350-94d8-1baf54cdc09e",
+                    "name": "Membuat dan mengelola Kalender Akademik",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "2f698399-0061-4685-ac41-b0c07bc5eb97",
+                    "name": "Mengajukan Cuti Kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "46178364-740c-41ad-b013-32d20b621da7",
+                    "name": "Memproses pengajuan wisuda dari Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "8f69551d-f562-4f62-b846-5fc704cc10aa",
+                    "name": "Mengajukan proses Wisuda oleh Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "cd0ad36f-1d53-4b12-bc05-d0a11a21f3ac",
+                    "name": "Melihat Pengajuan Cuti Kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "23994171-695d-488e-a859-51469571fbf3",
+                    "name": "Mengelola Pengaturan Transkrip",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "c9433567-1257-4310-bb5e-07e64b773800",
+                    "name": "Menyetujui Pengajuan Cuti Kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                },
+                {
+                    "id": "8886d82d-c96f-4d58-afe0-d34c60577330",
+                    "name": "Melihat pengajuan wisuda dari Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+                    "attributes": {}
+                }
+            ],
+            "account-console": [],
+            "broker": [
+                {
+                    "id": "32f62544-5763-4914-af58-bbbbe73fc869",
+                    "name": "read-token",
+                    "description": "${role_read-token}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "8d996404-dff7-4aeb-bf80-e51feaa5e0df",
+                    "attributes": {}
+                }
+            ],
+            "iraise-dev": [
+                {
+                    "id": "73f1de2f-9c9d-48ba-a957-1a3737e673f8",
+                    "name": "Admin Cuti Kuliah",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "student-lecturer-management": [
+                                "Melihat list mahasiswa perkelas",
+                                "Melihat data mahasiswa",
+                                "Melihat list mahasiswa di Universitas",
+                                "Melihat list mahasiswa di Prodi"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengubah Password Akun",
+                                "Logout",
+                                "Log Activity"
+                            ],
+                            "academic-affairs": [
+                                "Memproses Pengajuan Cuti Kuliah yang sudah disetujui",
+                                "Melihat Pengajuan Cuti Kuliah"
+                            ],
+                            "communication-support": [
+                                "Mendownload tutorial penggunaan iRaise",
+                                "Melihat pengumuman"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "096998fc-91be-4e46-8db0-410aa110951d",
+                    "name": "Mahasiswa",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "student-lecturer-management": [
+                                "Melihat data mahasiswa",
+                                "Melihat riwayat pembayaran Kuliah mahasiswa"
+                            ],
+                            "academic-courses": [
+                                "Melihat kelas kuliah prodi",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Mahasiswa)",
+                                "Melihat list mata kuliah prodi",
+                                "Melihat Jadwal Kuliah Mahasiswa"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengubah Password Akun",
+                                "Logout",
+                                "Log Activity"
+                            ],
+                            "academic-performance": [
+                                "Melihat KHS individu Mahasiswa",
+                                "Melihat Histori Absensi Kelas",
+                                "Melakukan pengisian KRS",
+                                "Melihat transkrip nilai Mahasiswa",
+                                "Melihat riwayat KRS mahasiswa"
+                            ],
+                            "academic-affairs": [
+                                "Mengajukan proses Wisuda oleh Mahasiswa",
+                                "Melihat Kalender Akademik",
+                                "Mengajukan Cuti Kuliah"
+                            ],
+                            "communication-support": [
+                                "Mendownload tutorial penggunaan iRaise",
+                                "Melihat pengumuman",
+                                "Membuat Aduan"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "ea12043f-d527-49b8-b2d5-61f75cad3dc9",
+                    "name": "Dosen",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "student-lecturer-management": [
+                                "Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)",
+                                "Melihat list mahasiswa perkelas",
+                                "Melihat data mahasiswa",
+                                "Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)",
+                                "List Histori Mahasiswa Bimbingan Akademik Dosen",
+                                "Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)",
+                                "Melihat Histori Kelas Dosen"
+                            ],
+                            "academic-courses": [
+                                "Melihat kelas kuliah prodi",
+                                "Melihat list mata kuliah prodi",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Dosen)",
+                                "Melihat Jadwal Kuliah Dosen"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengubah Password Akun",
+                                "Log Activity",
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Logout"
+                            ],
+                            "academic-performance": [
+                                "Melihat transkrip nilai Mahasiswa",
+                                "Melihat KHS individu Mahasiswa",
+                                "Melihat Histori Absensi Kelas",
+                                "Menginput Nilai Mahasiswa",
+                                "Melakukan Absen Kelas",
+                                "Melihat riwayat nilai MHS di kelas mata kuliah",
+                                "Melihat riwayat KRS mahasiswa"
+                            ],
+                            "academic-affairs": [
+                                "Melihat Pengajuan Cuti Kuliah",
+                                "Menyetujui Pengajuan Cuti Kuliah",
+                                "Melihat Kalender Akademik"
+                            ],
+                            "communication-support": [
+                                "Melihat pengumuman",
+                                "Membuat Aduan",
+                                "Mendownload tutorial penggunaan iRaise"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "418bfcef-8b53-45a1-bc42-eb69fa99c69d",
+                    "name": "Admin Layanan",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "student-lecturer-management": [
+                                "Melihat list mahasiswa perkelas",
+                                "Melihat data mahasiswa",
+                                "Memperbaiki data mahasiswa yang salah",
+                                "Melihat list mahasiswa di Universitas",
+                                "Melihat list mahasiswa di Prodi"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengubah Password Akun",
+                                "Logout",
+                                "Log Activity"
+                            ],
+                            "academic-affairs": [
+                                "Memproses pengajuan wisuda dari Mahasiswa",
+                                "Melihat pengajuan wisuda dari Mahasiswa"
+                            ],
+                            "communication-support": [
+                                "Mendownload tutorial penggunaan iRaise",
+                                "Melihat pengumuman",
+                                "Memproses Aduan User"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "b8f06a7a-407f-4cce-8881-e35c97241dc0",
+                    "name": "Admin Akademik",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "iraise-dev": [
+                                "Admin Cuti Kuliah",
+                                "Dosen",
+                                "Admin Layanan",
+                                "Admin Prodi",
+                                "Prodi"
+                            ],
+                            "student-lecturer-management": [
+                                "Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)",
+                                "Melihat list seluruh dosen di universitas",
+                                "Melihat riwayat pembayaran Kuliah mahasiswa",
+                                "Input data mahasiswa baru",
+                                "Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)",
+                                "Mengelola data dosen (Menginput data)",
+                                "Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)",
+                                "Mengelola data dosen (Melihat data)",
+                                "Mengelola data dosen (Mengupdate data)"
+                            ],
+                            "academic-courses": [
+                                "Mengelola kelas prodi (Membuat kelas kuliah)",
+                                "Mengelola matakuliah prodi (Membuat matakuliah)",
+                                "Mengelola kelas prodi (Melihat kelas kuliah)",
+                                "Mengelola Kurikulum (Melihat kurikulum)",
+                                "Mengelola Kurikulum (Membuat kurikulum)",
+                                "Membuka/Tutup Pengisian Nilai Mahasiswa oleh Dosen",
+                                "Mengelola Kurikulum (Mengupdate kurikulum)",
+                                "Mengelola matakuliah prodi (Melihat matakuliah)",
+                                "Mengelola matakuliah prodi (Mengupdate matakuliah)",
+                                "Membuka/Tutup jadwal pengajuan cuti kuliah",
+                                "Mengelola kelas prodi (Mengupdate kelas kuliah)",
+                                "Membuka/Tutup Pengisian KRS"
+                            ],
+                            "user-identity-management": [
+                                "Pemulihan Akun/Password Pejabat",
+                                "Mengelola Seluruh Akun di IRaise (Melihat list akun akademik)",
+                                "Mengelola Seluruh Akun di IRaise (Mengupdate akun mahasiswa)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat list akun dosen di prodi)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat list akun mahasiswa di prodi)",
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat akun prodi)",
+                                "Mengelola Seluruh Akun di IRaise (Membuat akun prodi)",
+                                "Mengelola Seluruh Akun di IRaise (Mengupdate akun prodi)",
+                                "Mengelola Seluruh Akun di IRaise (Mengupdate akun dosen)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat akun dosen)",
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat akun akademik)",
+                                "Mengelola Seluruh Akun di IRaise (Mengupdate akun akademik)",
+                                "Mengelola Seluruh Akun di IRaise (Membuat akun mahasiswa)",
+                                "Mengelola Seluruh Akun di IRaise (Membuat akun akademik)",
+                                "Mengubah Password Akun",
+                                "Log Activity",
+                                "Log Admin",
+                                "Mengelola Seluruh Akun di IRaise (Membuat akun dosen)",
+                                "Mengelola Seluruh Akun di IRaise (Melihat akun mahasiswa)",
+                                "Logout",
+                                "Mengelola Seluruh Akun di IRaise (Melihat list akun prodi)"
+                            ],
+                            "academic-affairs": [
+                                "Membuat dan mengelola Kalender Akademik",
+                                "Melihat pengajuan wisuda dari Mahasiswa"
+                            ],
+                            "communication-support": [
+                                "Membuat Pengumuman Akademik",
+                                "Memproses Aduan User"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "617a0378-179e-47eb-a415-6ddfd1af5a74",
+                    "name": "uma_protection",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "694c84dc-9af7-4535-b42d-08ff69de5641",
+                    "name": "Admin Prodi",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "iraise-dev": ["Prodi"],
+                            "student-lecturer-management": [
+                                "Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)",
+                                "Menetapkan mahasiswa untuk Pembimbing akademik",
+                                "Melihat riwayat pembayaran Kuliah mahasiswa",
+                                "Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)",
+                                "Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)",
+                                "Update data mahasiswa",
+                                "Memproses mahasiswa transfer"
+                            ],
+                            "academic-courses": [
+                                "Mengelola kelas prodi (Membuat kelas kuliah)",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Dosen)",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Mahasiswa)",
+                                "Mengelola matakuliah prodi (Melihat matakuliah)",
+                                "Mengelola matakuliah prodi (Membuat matakuliah)",
+                                "Mengelola kelas prodi (Melihat kelas kuliah)",
+                                "Mengelola Kurikulum (Melihat kurikulum)",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Prodi)",
+                                "Mengelola matakuliah prodi (Mengupdate matakuliah)",
+                                "Mengelola kelas prodi (Mengupdate kelas kuliah)"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Log Activity",
+                                "Mengelola Profil Diri (Mengubah Profil Diri)"
+                            ],
+                            "academic-affairs": [
+                                "Melihat Pengajuan Cuti Kuliah",
+                                "Mengelola Pengaturan Transkrip"
+                            ],
+                            "academic-performance": [
+                                "Mengelola hapus nilai MHS",
+                                "Melihat laporan hapus nilai MHS"
+                            ],
+                            "communication-support": [
+                                "Membuat pengumuman prodi"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                },
+                {
+                    "id": "4aac43c6-d6b1-44cc-9e7a-8646eca4dd56",
+                    "name": "Prodi",
+                    "description": "",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "student-lecturer-management": [
+                                "Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)",
+                                "Melihat list mahasiswa transfer prodi",
+                                "Melihat list mahasiswa perkelas",
+                                "Melihat data mahasiswa",
+                                "List Histori Mahasiswa Bimbingan Akademik Dosen",
+                                "Melihat list dosen aktif prodi",
+                                "Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)",
+                                "Melihat Histori Kelas Dosen",
+                                "Melihat list PA dan mahasiswa bimbingannya prodi",
+                                "Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)",
+                                "Melihat list Status mahasiswa (Aktif, Cuti, Alpha, Drop Out, Tamat) Prodi",
+                                "Melihat list seluruh dosen di prodi",
+                                "Melihat list mahasiswa di Prodi"
+                            ],
+                            "academic-courses": [
+                                "Melihat kelas kuliah prodi",
+                                "Mengelola kelas prodi (Membuat kelas kuliah)",
+                                "Melihat Jadwal Kuliah Mahasiswa",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Dosen)",
+                                "Melihat Jadwal Kuliah Dosen",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Mahasiswa)",
+                                "Mengelola matakuliah prodi (Membuat matakuliah)",
+                                "Mengelola kelas prodi (Melihat kelas kuliah)",
+                                "List Kurikulum Prodi",
+                                "Mengelola Kurikulum (Melihat kurikulum)",
+                                "Melihat list mata kuliah prodi",
+                                "Mengelola matakuliah prodi (Melihat matakuliah)",
+                                "Export Excel & PDF jadwal mata kuliah (Download Jadwal kuliah yang ada pada Prodi)",
+                                "Mengelola matakuliah prodi (Mengupdate matakuliah)",
+                                "Melihat Jadwal Kuliah Prodi",
+                                "Mengelola kelas prodi (Mengupdate kelas kuliah)"
+                            ],
+                            "user-identity-management": [
+                                "Mengelola Profil Diri (Melihat Profil Diri)",
+                                "Mengelola Profil Diri (Mengubah Profil Diri)",
+                                "Mengubah Password Akun",
+                                "Log Activity",
+                                "Logout"
+                            ],
+                            "academic-performance": [
+                                "Grafik kuliah mahasiswa Prodi",
+                                "Grafik mahasiswa yang sudah melakukan pengisian KRS di Prodi",
+                                "melihat khs perkelas",
+                                "Melihat transkrip nilai Mahasiswa",
+                                "Melihat rekap dosen prodi yang mengisi absen kuliah",
+                                "Melihat rekap mahasiswa isi krs",
+                                "Melihat KHS individu Mahasiswa",
+                                "Melihat list IP Mahasiswa Prodi",
+                                "Melihat Histori Absensi Kelas",
+                                "Melihat transkrip perkelas",
+                                "Melihat Rekap dosen prodi yang mengisi nilai",
+                                "Melihat laporan sks dosen Prodi",
+                                "Melihat laporan MK Dosen Prodi",
+                                "Melihat list IPK Mahasiswa Prodi",
+                                "Melihat riwayat nilai MHS di kelas mata kuliah",
+                                "Melihat riwayat KRS mahasiswa"
+                            ],
+                            "academic-affairs": [
+                                "Melihat Pengajuan Cuti Kuliah"
+                            ],
+                            "communication-support": [
+                                "Melihat pengumuman",
+                                "Mendownload tutorial penggunaan iRaise"
+                            ]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+                    "attributes": {}
+                }
+            ],
+            "student-lecturer-management": [
+                {
+                    "id": "9f4a7aad-29f1-4361-9db0-09c6724abf9e",
+                    "name": "Melihat list mahasiswa transfer prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "bd62e150-4970-44f5-8ddf-92f155a650ea",
+                    "name": "Mengelola data dosen (Melihat data)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "641e333c-5879-4297-a310-983d260cca2b",
+                    "name": "Mengelola riwayat pendidikan dosen (Membuat riwayat pendidikan dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "3a98a133-e79b-4819-90f7-3487676cff98",
+                    "name": "Input data mahasiswa baru",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "78b95ebd-0de7-4b38-89ba-5bac5a002bf8",
+                    "name": "Melihat list mahasiswa perkelas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "62d7e763-87d6-45d5-bb2e-7e4dba929af8",
+                    "name": "Melihat list seluruh dosen di universitas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "7436d43b-793b-4763-8c7d-2df3786903ff",
+                    "name": "Menetapkan mahasiswa untuk Pembimbing akademik",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "a26cff31-dcdf-44f8-9cc2-0b9e2f8a6318",
+                    "name": "Mengelola riwayat pendidikan dosen (Melihat riwayat pendidikan dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "7fb030e8-a5da-43d7-a745-5af389af0698",
+                    "name": "Melihat data mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "c284a3a4-ace2-4f95-a871-98d081d20ec9",
+                    "name": "Melihat riwayat pembayaran Kuliah mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "137eb37e-fa91-4895-bb5f-1cd96bc63aa5",
+                    "name": "Mengelola riwayat pendidikan dosen (Mengupdate riwayat pendidikan dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "f10aa385-3eab-43fa-a5e9-73b5c64ac607",
+                    "name": "Mengelola data dosen (Mengupdate data)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "9a27a001-e5b7-443e-bf6a-8993068151be",
+                    "name": "List Histori Mahasiswa Bimbingan Akademik Dosen",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "8db250e8-0ff5-4fb5-8476-de91153ccbcf",
+                    "name": "Update data mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "b06241fc-d775-47ab-bc0b-0dc2bac0f448",
+                    "name": "Melihat Histori Kelas Dosen",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "bb00a570-19d5-4803-bacc-45717c6394d1",
+                    "name": "Memproses mahasiswa transfer",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "d810ff32-e1cb-476d-89df-4af89b6fe95b",
+                    "name": "Melihat list Status mahasiswa (Aktif, Cuti, Alpha, Drop Out, Tamat) Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "14165fbd-9a12-40ac-b9ed-b2e2fb56ff1c",
+                    "name": "Memperbaiki data mahasiswa yang salah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "f5997eeb-4598-43e9-90e7-94d90b90261e",
+                    "name": "Melihat list mahasiswa di Universitas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "f52e857c-0eab-494a-88ea-4d290e7801ef",
+                    "name": "Melihat list mahasiswa di Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "3646b4c8-ae8c-4b6a-a3d7-3e4a0f82dcfc",
+                    "name": "Melihat list PA dan mahasiswa bimbingannya prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "faeea9f2-501d-4528-9b71-b6e4d1efc414",
+                    "name": "Mengelola data dosen (Menginput data)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "380fe6d6-536e-48c8-8639-5dfadcc58886",
+                    "name": "Melihat list dosen aktif prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                },
+                {
+                    "id": "4e6d0c80-d3eb-4973-99c6-3eda3bb89450",
+                    "name": "Melihat list seluruh dosen di prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+                    "attributes": {}
+                }
+            ],
+            "user-identity-management": [
+                {
+                    "id": "82a9b34e-cceb-4d18-a65e-b66d0aaed96e",
+                    "name": "Mengelola Seluruh Akun di IRaise (Mengupdate akun dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "0b0c15e5-6ca3-4a59-8ae6-3318c3b318b9",
+                    "name": "Mengelola Seluruh Akun di IRaise (Mengupdate akun prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "30717289-7a48-4d1f-8607-2a7e8290dc9c",
+                    "name": "Pemulihan Akun/Password Pejabat",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "6332155f-e954-4e6c-81e4-f5b3df0ced45",
+                    "name": "Log Admin",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "c603f9d4-1ba5-47f8-b9cd-6c50fa9e15cd",
+                    "name": "Mengelola Seluruh Akun di IRaise (Mengupdate akun akademik)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "5c60754d-ad03-4970-9675-66267ebe42a0",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat list akun akademik)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "fa79e5af-d5cc-4aae-ad84-f6f085d47662",
+                    "name": "Mengelola Seluruh Akun di IRaise (Mengupdate akun mahasiswa)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "281fad0a-33b1-4cea-8d8f-29721faf3713",
+                    "name": "Mengelola Seluruh Akun di IRaise (Membuat akun dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "e9f849dc-a787-4cb8-a788-c913702b19bb",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat akun dosen)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "cec7f600-de29-4d12-b8b4-95118a18dd1b",
+                    "name": "Mengelola Seluruh Akun di IRaise (Membuat akun akademik)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "2f273f9d-728e-40ec-842f-56f16f815655",
+                    "name": "Mengelola Seluruh Akun di IRaise (Membuat akun mahasiswa)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "7139fd37-5257-4c76-8e1d-9c8f696efc07",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat list akun dosen di prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "d7c3f283-8a0e-44ed-8f89-3e06c5c77ce3",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat list akun mahasiswa di prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "c36ba6e9-34be-4f50-9cf2-37a85b6b6fd5",
+                    "name": "Mengelola Profil Diri (Mengubah Profil Diri)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "c3728366-f8b0-452d-b53c-86a4f709c681",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat akun akademik)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "c151b16b-f470-4579-b8a4-39744fe2aef5",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat akun mahasiswa)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "f97354d7-f2d7-4dbe-91f5-ad03d9fac182",
+                    "name": "Mengelola Profil Diri (Melihat Profil Diri)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "273ac271-8b9d-4327-a98d-82da94f492ab",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat akun prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "6067cd0e-8ef6-4f7c-bbda-d9f8ba968478",
+                    "name": "Mengubah Password Akun",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "28ef8382-44f3-4c91-b933-c0d90fdc78e9",
+                    "name": "Logout",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "2ad6cd97-6b9f-4fcd-9fcc-be4b9bf6daec",
+                    "name": "Log Activity",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "d10cf2fa-5426-4ad9-9c63-7020c8d67156",
+                    "name": "Mengelola Seluruh Akun di IRaise (Melihat list akun prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                },
+                {
+                    "id": "f7e301bf-d515-40dd-ae65-c494b04777e7",
+                    "name": "Mengelola Seluruh Akun di IRaise (Membuat akun prodi)",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "00f2367e-7799-45d4-bfa3-5e5118709806",
+                    "attributes": {}
+                }
+            ],
+            "admin-cli": [],
+            "academic-performance": [
+                {
+                    "id": "d8e99020-c273-4b31-a4d2-5a4b46cbbbff",
+                    "name": "Melihat rekap dosen prodi yang mengisi absen kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "f52092a8-f331-40c7-827d-c38f962ca75d",
+                    "name": "Melihat rekap mahasiswa isi krs",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "0d53e41f-ab91-46f7-a5e1-21c7d705ef35",
+                    "name": "Grafik kuliah mahasiswa Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "59efb3b0-8896-41c9-8df7-752499dfaf66",
+                    "name": "Melihat KHS individu Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "6069c4fd-2739-4a40-ba6e-a2b013862c49",
+                    "name": "Melihat laporan MK Dosen Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "2246ed80-8f01-4869-9ba1-d57eed70c62c",
+                    "name": "Melihat list IP Mahasiswa Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "8ae4817d-469e-46ac-b77f-225839ac82a8",
+                    "name": "Melihat Histori Absensi Kelas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "c19f0380-2b3a-42a2-9e60-a0ba0288d859",
+                    "name": "Menginput Nilai Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "63cc3b87-9f18-49ec-9a1b-fa1493477df8",
+                    "name": "Grafik mahasiswa yang sudah melakukan pengisian KRS di Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "b584b04b-796a-4e28-bb3a-2af013fad68c",
+                    "name": "melihat khs perkelas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "e49a9229-b34b-4dfd-aca8-41975d92272b",
+                    "name": "Melihat transkrip perkelas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "3318ae6b-b763-4467-ad9b-07a82f256a94",
+                    "name": "Melakukan pengisian KRS",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "2dabee33-869a-4195-b37a-a21ca5ca2b24",
+                    "name": "Melihat Rekap dosen prodi yang mengisi nilai",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "26a8b5f4-5690-416a-af76-6c928f52a054",
+                    "name": "Melihat list IPK Mahasiswa Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "5ed03cf7-499b-4b46-92b9-ef6271d6fd47",
+                    "name": "Melihat transkrip nilai Mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "1fc43b55-a251-4549-9624-eb74b82917ec",
+                    "name": "Melihat laporan sks dosen Prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "af004fff-36d3-468a-a1c0-3cedcd07c2a3",
+                    "name": "Mengelola hapus nilai MHS",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "4b1c87b2-c494-4e2f-b985-562077eee3df",
+                    "name": "Melakukan Absen Kelas",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "87578855-ad0c-45bd-99d7-47ecf0cb71f3",
+                    "name": "Melihat laporan hapus nilai MHS",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "fdc0c875-99c4-47a6-b9c6-311395076697",
+                    "name": "Melihat riwayat KRS mahasiswa",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                },
+                {
+                    "id": "439b74aa-f196-487a-8374-0ecc37fa1676",
+                    "name": "Melihat riwayat nilai MHS di kelas mata kuliah",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "240d607b-913a-4cf0-b098-852d6535cf06",
+                    "attributes": {}
+                }
+            ],
+            "widuri-inventory": [
+                {
+                    "id": "7129d3cf-e6d6-4129-a9de-369f6ffe468a",
+                    "name": "owner",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "32269d2a-5a6b-4afe-b258-bbb5323839f4",
+                    "attributes": {}
+                },
+                {
+                    "id": "a4a41671-4b12-4628-ad78-6670f68257dc",
+                    "name": "uma_protection",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "32269d2a-5a6b-4afe-b258-bbb5323839f4",
+                    "attributes": {}
+                },
+                {
+                    "id": "825e2293-16fd-478c-acbd-a7d440dd0d51",
+                    "name": "employee",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "32269d2a-5a6b-4afe-b258-bbb5323839f4",
+                    "attributes": {}
+                },
+                {
+                    "id": "f936d18d-a9c7-4b04-88d6-102c0da54d0e",
+                    "name": "buyer",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "32269d2a-5a6b-4afe-b258-bbb5323839f4",
+                    "attributes": {}
+                }
+            ],
+            "account": [
+                {
+                    "id": "17f75d1e-ad76-404b-86a2-3cbf2f0a867b",
+                    "name": "view-groups",
+                    "description": "${role_view-groups}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "db0e0807-4c12-428a-8c1a-e431a4d250ed",
+                    "name": "view-consent",
+                    "description": "${role_view-consent}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "82b1b316-a23d-4753-ba3b-4c76ef503725",
+                    "name": "manage-account",
+                    "description": "${role_manage-account}",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "account": ["manage-account-links"]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "a1d8070c-5356-4b6f-96b2-21f8a4545502",
+                    "name": "manage-account-links",
+                    "description": "${role_manage-account-links}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "e914e8d2-561c-4d1c-8c1e-9284150556cc",
+                    "name": "manage-consent",
+                    "description": "${role_manage-consent}",
+                    "composite": true,
+                    "composites": {
+                        "client": {
+                            "account": ["view-consent"]
+                        }
+                    },
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "6df688f4-909d-4cee-9d91-984178ab97d1",
+                    "name": "view-profile",
+                    "description": "${role_view-profile}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "173d607b-00c6-4162-8366-dfa8983ad09c",
+                    "name": "view-applications",
+                    "description": "${role_view-applications}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                },
+                {
+                    "id": "89c80499-436d-4369-996c-29ab8a55e00a",
+                    "name": "delete-account",
+                    "description": "${role_delete-account}",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+                    "attributes": {}
+                }
+            ],
+            "communication-support": [
+                {
+                    "id": "490b63e1-ff66-4091-8dd2-024f3352dd73",
+                    "name": "Melihat pengumuman",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                },
+                {
+                    "id": "69b948e1-d748-42bc-9ac0-010048ead106",
+                    "name": "Memproses Aduan User",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                },
+                {
+                    "id": "518e7ab7-ff67-4360-a684-151891f295b7",
+                    "name": "Mendownload tutorial penggunaan iRaise",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                },
+                {
+                    "id": "f69e1490-367f-4703-bd28-381ccc900d8e",
+                    "name": "Membuat Aduan",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                },
+                {
+                    "id": "4fb899a4-afdc-4262-9968-0593dfade289",
+                    "name": "Membuat Pengumuman Akademik",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                },
+                {
+                    "id": "be7d2f46-9623-4798-9298-02c25f18673b",
+                    "name": "Membuat pengumuman prodi",
+                    "description": "",
+                    "composite": false,
+                    "clientRole": true,
+                    "containerId": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+                    "attributes": {}
+                }
+            ]
+        }
+    },
+    "groups": [],
+    "defaultRole": {
+        "id": "73901348-59b2-4e84-a709-c4fc7a3f47d6",
+        "name": "default-roles-development",
+        "description": "${role_default-roles}",
+        "composite": true,
+        "clientRole": false,
+        "containerId": "1189c732-c18a-4da4-a624-e09bf2b05fb8"
+    },
+    "requiredCredentials": ["password"],
+    "otpPolicyType": "totp",
+    "otpPolicyAlgorithm": "HmacSHA1",
+    "otpPolicyInitialCounter": 0,
+    "otpPolicyDigits": 6,
+    "otpPolicyLookAheadWindow": 1,
+    "otpPolicyPeriod": 30,
+    "otpPolicyCodeReusable": false,
+    "otpSupportedApplications": [
+        "totpAppFreeOTPName",
+        "totpAppGoogleName",
+        "totpAppMicrosoftAuthenticatorName"
+    ],
+    "localizationTexts": {},
+    "webAuthnPolicyRpEntityName": "keycloak",
+    "webAuthnPolicySignatureAlgorithms": ["ES256"],
+    "webAuthnPolicyRpId": "",
+    "webAuthnPolicyAttestationConveyancePreference": "not specified",
+    "webAuthnPolicyAuthenticatorAttachment": "not specified",
+    "webAuthnPolicyRequireResidentKey": "not specified",
+    "webAuthnPolicyUserVerificationRequirement": "not specified",
+    "webAuthnPolicyCreateTimeout": 0,
+    "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
+    "webAuthnPolicyAcceptableAaguids": [],
+    "webAuthnPolicyExtraOrigins": [],
+    "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
+    "webAuthnPolicyPasswordlessSignatureAlgorithms": ["ES256"],
+    "webAuthnPolicyPasswordlessRpId": "",
+    "webAuthnPolicyPasswordlessAttestationConveyancePreference": "not specified",
+    "webAuthnPolicyPasswordlessAuthenticatorAttachment": "not specified",
+    "webAuthnPolicyPasswordlessRequireResidentKey": "not specified",
+    "webAuthnPolicyPasswordlessUserVerificationRequirement": "not specified",
+    "webAuthnPolicyPasswordlessCreateTimeout": 0,
+    "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
+    "webAuthnPolicyPasswordlessAcceptableAaguids": [],
+    "webAuthnPolicyPasswordlessExtraOrigins": [],
+    "users": [
+        {
+            "id": "c1173b71-47f4-44bc-a03f-47a066533d99",
+            "username": "service-account-iraise-dev",
+            "emailVerified": false,
+            "createdTimestamp": 1730085871365,
+            "enabled": true,
+            "totp": false,
+            "serviceAccountClientId": "iraise-dev",
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "realmRoles": ["default-roles-development"],
+            "clientRoles": {
+                "iraise-dev": ["uma_protection"]
+            },
+            "notBefore": 0,
+            "groups": []
+        },
+        {
+            "id": "f26d8ecf-633f-49ab-9eca-cc219b67fa3e",
+            "username": "adminaka",
+            "firstName": "adminaka",
+            "lastName": "adminaka",
+            "email": "adminaka@adminaka",
+            "emailVerified": false,
+            "createdTimestamp": 1732282774596,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "c50a88d8-bb5d-46e7-8518-3ee7b8bd28df",
+            "username": "admincuti",
+            "firstName": "admincuti",
+            "lastName": "admincuti",
+            "email": "admin@admin.com",
+            "emailVerified": false,
+            "createdTimestamp": 1730859348215,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "bd5c90b5-23e2-49a7-9344-4b751dbfe889",
+            "username": "adminlayanan",
+            "firstName": "adminlayanan",
+            "lastName": "adminlayanan",
+            "email": "admin1@admin.com",
+            "emailVerified": false,
+            "createdTimestamp": 1730885227276,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "b78a3d67-613d-4647-8eaa-f394ef6e5506",
+            "username": "adminprodi",
+            "firstName": "adminprodi",
+            "lastName": "adminprodi",
+            "email": "test@test1",
+            "emailVerified": false,
+            "createdTimestamp": 1730097495734,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "0a58cf7d-15eb-4cf3-9941-8c07f569c10b",
+            "username": "adminrealm",
+            "firstName": "adminrealm",
+            "lastName": "adminrealm",
+            "email": "admin@realm.com",
+            "emailVerified": false,
+            "createdTimestamp": 1735737570908,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "89d04bbb-664d-4baa-810b-7400055a478e",
+            "username": "dosen",
+            "firstName": "dosen",
+            "lastName": "dosen",
+            "email": "dosen@mail",
+            "emailVerified": false,
+            "createdTimestamp": 1730176202549,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "69de9c72-1e09-41fd-8623-76059f439626",
+            "username": "mahasiswa",
+            "firstName": "mhs",
+            "lastName": "mhs",
+            "email": "mhs@mhs",
+            "emailVerified": false,
+            "createdTimestamp": 1730519026068,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "92db33ba-fa5d-47f2-9c17-53cf1a57ab82",
+            "username": "prodi",
+            "firstName": "prodi",
+            "lastName": "prodi",
+            "email": "test@test",
+            "emailVerified": false,
+            "createdTimestamp": 1730097024498,
+            "enabled": true,
+            "totp": false,
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        }
+    ],
+    "scopeMappings": [
+        {
+            "clientScope": "offline_access",
+            "roles": ["offline_access"]
+        }
+    ],
+    "clientScopeMappings": {
+        "account": [
+            {
+                "client": "account-console",
+                "roles": ["manage-account", "view-groups"]
+            }
+        ]
+    },
+    "clients": [
+        {
+            "id": "1bc80129-66d9-4592-abd7-359fd19cddaa",
+            "clientId": "academic-affairs",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "0f7491d7-7845-4664-81bd-bc45ee940a0b",
+            "clientId": "academic-courses",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "240d607b-913a-4cf0-b098-852d6535cf06",
+            "clientId": "academic-performance",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "631ee54c-5fcc-44b2-bdcb-73719ae69a85",
+            "clientId": "account",
+            "name": "${client_account}",
+            "rootUrl": "${authBaseUrl}",
+            "baseUrl": "/realms/development/account/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/realms/development/account/*"],
+            "webOrigins": [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {
+                "post.logout.redirect.uris": "+"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "4e88c8df-9b5d-450d-b197-76384b34520e",
+            "clientId": "account-console",
+            "name": "${client_account-console}",
+            "rootUrl": "${authBaseUrl}",
+            "baseUrl": "/realms/development/account/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/realms/development/account/*"],
+            "webOrigins": [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {
+                "post.logout.redirect.uris": "+",
+                "pkce.code.challenge.method": "S256"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "protocolMappers": [
+                {
+                    "id": "c43f04be-c62f-4e4f-9d69-7825f11d86c0",
+                    "name": "audience resolve",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-resolve-mapper",
+                    "consentRequired": false,
+                    "config": {}
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "78d79e94-1eb7-4001-9a1c-f73d7dcd7240",
+            "clientId": "admin-cli",
+            "name": "${client_admin-cli}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [],
+            "webOrigins": [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {},
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "8d996404-dff7-4aeb-bf80-e51feaa5e0df",
+            "clientId": "broker",
+            "name": "${client_broker}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [],
+            "webOrigins": [],
+            "notBefore": 0,
+            "bearerOnly": true,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {},
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "3981f6bc-96cf-4853-ab67-3ec1bd526b02",
+            "clientId": "communication-support",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "display.on.consent.screen": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "aacc8bd0-6b22-4972-8bf8-951ceaa63f09",
+            "clientId": "iraise-dev",
+            "name": "",
+            "description": "",
+            "rootUrl": "http://localhost:8765",
+            "adminUrl": "http://localhost:8765",
+            "baseUrl": "http://localhost:8765",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "**********",
+            "redirectUris": ["", "http://localhost:8765/*"],
+            "webOrigins": ["http://localhost:8765"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": true,
+            "publicClient": false,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1730003155",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "display.on.consent.screen": "false",
+                "use.jwks.url": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "protocolMappers": [
+                {
+                    "id": "80d2e6d1-6471-46e7-8e5f-70df929bee5c",
+                    "name": "Client ID",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "client_id",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "client_id",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "04db0da3-01fc-408c-a217-6b1e7edfa89b",
+                    "name": "Client Host",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientHost",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientHost",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "0bd7740d-5fa1-4d8b-bd99-843ee4676f9d",
+                    "name": "Client IP Address",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientAddress",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientAddress",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "31bcfc10-9828-4f01-80a6-22c004ab206f",
+            "clientId": "realm-management",
+            "name": "${client_realm-management}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [],
+            "webOrigins": [],
+            "notBefore": 0,
+            "bearerOnly": true,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {},
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "3028889b-4d21-44c5-98e2-ba7269f07a19",
+            "clientId": "security-admin-console",
+            "name": "${client_security-admin-console}",
+            "rootUrl": "${authAdminUrl}",
+            "baseUrl": "/admin/development/console/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/admin/development/console/*"],
+            "webOrigins": ["+"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes": {
+                "post.logout.redirect.uris": "+",
+                "pkce.code.challenge.method": "S256"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "protocolMappers": [
+                {
+                    "id": "8f262302-d199-4dc4-bc98-3332dc7dc96f",
+                    "name": "locale",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "locale",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "locale",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "ce9c71dd-c78b-4d81-8ad0-6629d990581e",
+            "clientId": "student-lecturer-management",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "00f2367e-7799-45d4-bfa3-5e5118709806",
+            "clientId": "user-identity-management",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "permission",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "32269d2a-5a6b-4afe-b258-bbb5323839f4",
+            "clientId": "widuri-inventory",
+            "name": "inventory",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": false,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1722505164",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "display.on.consent.screen": "false",
+                "use.jwks.url": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "protocolMappers": [
+                {
+                    "id": "335fed13-e6e3-4d57-9a1e-88874b86056d",
+                    "name": "Client ID",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "client_id",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "client_id",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "6751ce92-9238-4d08-a4d9-a495fd962c70",
+                    "name": "Client Host",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientHost",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientHost",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "d87fc5f7-1054-40d7-9574-04908e54ce88",
+                    "name": "Client IP Address",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientAddress",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientAddress",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        },
+        {
+            "id": "dcf85b67-8c01-4607-8394-0f33f70389dc",
+            "clientId": "xyz_client",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": false,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": ["/*"],
+            "webOrigins": ["/*"],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes": {
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1722316130",
+                "backchannel.logout.session.required": "true",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "display.on.consent.screen": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides": {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "protocolMappers": [
+                {
+                    "id": "38bcfda4-3589-4dc8-ab59-26dedaa43bd9",
+                    "name": "Client Host",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientHost",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientHost",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "2d6821b1-e47f-4bee-a95a-0d3f0d0c0012",
+                    "name": "Client IP Address",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "clientAddress",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "clientAddress",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "1f892c83-22b9-4f7e-b0b8-72de881f6682",
+                    "name": "Client ID",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "client_id",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "client_id",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes": [
+                "web-origins",
+                "acr",
+                "profile",
+                "roles",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "phone",
+                "offline_access",
+                "microprofile-jwt"
+            ]
+        }
+    ],
+    "clientScopes": [
+        {
+            "id": "54da5e86-60f4-48ad-9b0e-d439dbbf1581",
+            "name": "microprofile-jwt",
+            "description": "Microprofile - JWT built-in scope",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "true",
+                "display.on.consent.screen": "false"
+            },
+            "protocolMappers": [
+                {
+                    "id": "22bb3184-c003-44bb-9f4a-dde35f605c06",
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-realm-role-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "multivalued": "true",
+                        "user.attribute": "foo",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "ef5864bf-f62d-4d9d-8042-433093a4eea9",
+                    "name": "upn",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "username",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "upn",
+                        "jsonType.label": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c1607419-cbd2-457c-8422-7765c5bd3f48",
+            "name": "role_list",
+            "description": "SAML role list",
+            "protocol": "saml",
+            "attributes": {
+                "consent.screen.text": "${samlRoleListScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "973c15f3-be80-4c7b-ac76-bcfd17c17415",
+                    "name": "role list",
+                    "protocol": "saml",
+                    "protocolMapper": "saml-role-list-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "single": "false",
+                        "attribute.nameformat": "Basic",
+                        "attribute.name": "Role"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "9eb60f28-4b1b-4b98-a2e8-404b6148c69d",
+            "name": "address",
+            "description": "OpenID Connect built-in scope: address",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "true",
+                "consent.screen.text": "${addressScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "7e05478e-46f5-481f-804d-ae464c530e36",
+                    "name": "address",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-address-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.attribute.formatted": "formatted",
+                        "user.attribute.country": "country",
+                        "introspection.token.claim": "true",
+                        "user.attribute.postal_code": "postal_code",
+                        "userinfo.token.claim": "true",
+                        "user.attribute.street": "street",
+                        "id.token.claim": "true",
+                        "user.attribute.region": "region",
+                        "access.token.claim": "true",
+                        "user.attribute.locality": "locality"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ef23ca2e-c080-458d-a296-7d6640722c15",
+            "name": "phone",
+            "description": "OpenID Connect built-in scope: phone",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "true",
+                "consent.screen.text": "${phoneScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "8251b8f1-73c9-4b84-b261-4dea65854de3",
+                    "name": "phone number verified",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "phoneNumberVerified",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "phone_number_verified",
+                        "jsonType.label": "boolean"
+                    }
+                },
+                {
+                    "id": "6b582641-4354-4e8a-8885-4929b33dea47",
+                    "name": "phone number",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "phoneNumber",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "phone_number",
+                        "jsonType.label": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "a6ed1ed0-ebcf-4b77-8332-e3dc8552f2ae",
+            "name": "acr",
+            "description": "OpenID Connect scope for add acr (authentication context class reference) to the token",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "false",
+                "display.on.consent.screen": "false"
+            },
+            "protocolMappers": [
+                {
+                    "id": "3423d21a-501d-41b9-a41c-36b7851ad1fc",
+                    "name": "acr loa level",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-acr-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "8e353cb6-7582-4be7-a71e-0132398391e0",
+            "name": "basic",
+            "description": "OpenID Connect scope for add all basic claims to the token",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "false",
+                "display.on.consent.screen": "false"
+            },
+            "protocolMappers": [
+                {
+                    "id": "691a2c03-255d-46cb-86c2-fafede094b1e",
+                    "name": "sub",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-sub-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true"
+                    }
+                },
+                {
+                    "id": "8f79706d-e4a8-42a8-857e-3d1a0e654e05",
+                    "name": "auth_time",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usersessionmodel-note-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.session.note": "AUTH_TIME",
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "auth_time",
+                        "jsonType.label": "long"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "4a1109ea-6513-468f-961e-4c205badc47b",
+            "name": "permission",
+            "description": "",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "false",
+                "display.on.consent.screen": "true",
+                "gui.order": "",
+                "consent.screen.text": "permission"
+            },
+            "protocolMappers": [
+                {
+                    "id": "fc47f50d-3998-4d62-ae47-3c1b9ef42e2f",
+                    "name": "test",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-claims-param-token-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "id.token.claim": "true",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "66f526ef-0582-4eaa-ad3a-b003a4bd2a52",
+            "name": "web-origins",
+            "description": "OpenID Connect scope for add allowed web origins to the access token",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "false",
+                "consent.screen.text": "",
+                "display.on.consent.screen": "false"
+            },
+            "protocolMappers": [
+                {
+                    "id": "5e659b33-961b-4066-a02b-ec01230deccb",
+                    "name": "allowed web origins",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-allowed-origins-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "b1ec4c2e-77ca-4aa5-9335-000542b30b49",
+            "name": "offline_access",
+            "description": "OpenID Connect built-in scope: offline_access",
+            "protocol": "openid-connect",
+            "attributes": {
+                "consent.screen.text": "${offlineAccessScopeConsentText}",
+                "display.on.consent.screen": "true"
+            }
+        },
+        {
+            "id": "d8acb667-d0c7-48e2-8691-726beadfe2d4",
+            "name": "email",
+            "description": "OpenID Connect built-in scope: email",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "true",
+                "consent.screen.text": "${emailScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "5acd8c71-a8a6-4079-99aa-d3e5e89959e2",
+                    "name": "email",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "email",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "email",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "6501c53d-2b29-49f0-a699-c5c0ccc9a1be",
+                    "name": "email verified",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-property-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "emailVerified",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "email_verified",
+                        "jsonType.label": "boolean"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ab0c753e-e741-475b-abeb-f1a57e6ec7d2",
+            "name": "profile",
+            "description": "OpenID Connect built-in scope: profile",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "true",
+                "consent.screen.text": "${profileScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "3a13b49d-cb77-475e-806c-2446d82bb0f1",
+                    "name": "locale",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "locale",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "locale",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "df2b3156-f136-4b95-8d06-c9f4e1be43a6",
+                    "name": "middle name",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "middleName",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "middle_name",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "dc080dbc-389b-4c1d-a91a-6b175e027348",
+                    "name": "website",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "website",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "website",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "e4d2e069-7029-4d70-80c7-5f074fd6b88a",
+                    "name": "nickname",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "nickname",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "nickname",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "1ff7fa8c-dd43-4443-bf23-3e9c20d489a6",
+                    "name": "updated at",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "updatedAt",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "updated_at",
+                        "jsonType.label": "long"
+                    }
+                },
+                {
+                    "id": "05ed1a69-711d-4442-8605-961994bcc642",
+                    "name": "given name",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "firstName",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "given_name",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "bb96112a-7369-4fcf-9452-6b333a6cee62",
+                    "name": "zoneinfo",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "zoneinfo",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "zoneinfo",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "7cefe20b-da96-4792-aba5-de45aa2cb86e",
+                    "name": "profile",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "profile",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "profile",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "e41875a0-4e99-473b-a052-1c2d89697dbf",
+                    "name": "full name",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-full-name-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "id.token.claim": "true",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "userinfo.token.claim": "true"
+                    }
+                },
+                {
+                    "id": "62c2bee1-8bc3-4811-9b2e-8c1877562006",
+                    "name": "picture",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "picture",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "picture",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "0db449dc-2ac7-4709-8033-3628fd2b4079",
+                    "name": "family name",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "lastName",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "family_name",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "50603f7c-b5e3-451b-a53b-e8e17bed35d7",
+                    "name": "username",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "username",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "preferred_username",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "37dea3f8-69cc-48b0-91d9-7ec6cadddff8",
+                    "name": "gender",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "gender",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "gender",
+                        "jsonType.label": "String"
+                    }
+                },
+                {
+                    "id": "d993f1e6-bc71-41a6-8b44-d3b0ba8ff9ee",
+                    "name": "birthdate",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "birthdate",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "birthdate",
+                        "jsonType.label": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "47ce9149-da87-40ec-9d3f-28bd2e12d6b8",
+            "name": "roles",
+            "description": "OpenID Connect scope for add user roles to the access token",
+            "protocol": "openid-connect",
+            "attributes": {
+                "include.in.token.scope": "false",
+                "consent.screen.text": "${rolesScopeConsentText}",
+                "display.on.consent.screen": "true"
+            },
+            "protocolMappers": [
+                {
+                    "id": "70eeb968-9029-402a-bdd6-8577423620c7",
+                    "name": "client roles",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-client-role-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.attribute": "foo",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "resource_access.${client_id}.roles",
+                        "jsonType.label": "String",
+                        "multivalued": "true"
+                    }
+                },
+                {
+                    "id": "0b3eb240-413b-4120-a82e-c75e45a9ba4d",
+                    "name": "realm roles",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-realm-role-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "user.attribute": "foo",
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "realm_access.roles",
+                        "jsonType.label": "String",
+                        "multivalued": "true"
+                    }
+                },
+                {
+                    "id": "e3c052ae-3fdd-4c11-b319-7cd6e9033866",
+                    "name": "audience resolve",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-resolve-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "access.token.claim": "true"
+                    }
+                }
+            ]
+        }
+    ],
+    "defaultDefaultClientScopes": [
+        "role_list",
+        "profile",
+        "email",
+        "roles",
+        "web-origins",
+        "acr",
+        "basic",
+        "permission"
+    ],
+    "defaultOptionalClientScopes": [
+        "offline_access",
+        "address",
+        "phone",
+        "microprofile-jwt"
+    ],
+    "browserSecurityHeaders": {
+        "contentSecurityPolicyReportOnly": "",
+        "xContentTypeOptions": "nosniff",
+        "referrerPolicy": "no-referrer",
+        "xRobotsTag": "none",
+        "xFrameOptions": "SAMEORIGIN",
+        "contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+        "xXSSProtection": "1; mode=block",
+        "strictTransportSecurity": "max-age=31536000; includeSubDomains"
+    },
+    "smtpServer": {},
+    "loginTheme": "",
+    "accountTheme": "",
+    "adminTheme": "keycloak.v2",
+    "emailTheme": "",
+    "eventsEnabled": false,
+    "eventsListeners": ["jboss-logging"],
+    "enabledEventTypes": [],
+    "adminEventsEnabled": false,
+    "adminEventsDetailsEnabled": false,
+    "identityProviders": [],
+    "identityProviderMappers": [],
+    "components": {
+        "org.keycloak.services.clientregistration.policy.ClientRegistrationPolicy": [
+            {
+                "id": "0910cab2-d161-4dca-8f45-f3d05dc4ea3a",
+                "name": "Consent Required",
+                "providerId": "consent-required",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {}
+            },
+            {
+                "id": "40fea151-5b98-4606-bc75-048530e5561d",
+                "name": "Allowed Client Scopes",
+                "providerId": "allowed-client-templates",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {
+                    "allow-default-scopes": ["true"]
+                }
+            },
+            {
+                "id": "62e5752c-8ac3-43f8-a3d5-a26161a5e2cc",
+                "name": "Full Scope Disabled",
+                "providerId": "scope",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {}
+            },
+            {
+                "id": "64d8f586-228c-4c4f-aed3-5640e0fa5e45",
+                "name": "Allowed Protocol Mapper Types",
+                "providerId": "allowed-protocol-mappers",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {
+                    "allowed-protocol-mapper-types": [
+                        "oidc-sha256-pairwise-sub-mapper",
+                        "saml-user-property-mapper",
+                        "oidc-full-name-mapper",
+                        "oidc-usermodel-property-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "saml-role-list-mapper",
+                        "saml-user-attribute-mapper",
+                        "oidc-address-mapper"
+                    ]
+                }
+            },
+            {
+                "id": "d6e76354-bdf5-4ac8-92cd-cb07da688d5b",
+                "name": "Allowed Client Scopes",
+                "providerId": "allowed-client-templates",
+                "subType": "authenticated",
+                "subComponents": {},
+                "config": {
+                    "allow-default-scopes": ["true"]
+                }
+            },
+            {
+                "id": "18ecee39-59e6-4dab-93ab-3d314701f7b2",
+                "name": "Max Clients Limit",
+                "providerId": "max-clients",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {
+                    "max-clients": ["200"]
+                }
+            },
+            {
+                "id": "0da2b6b4-00c0-4b1a-8931-24b8f74b5081",
+                "name": "Trusted Hosts",
+                "providerId": "trusted-hosts",
+                "subType": "anonymous",
+                "subComponents": {},
+                "config": {
+                    "host-sending-registration-request-must-match": ["true"],
+                    "client-uris-must-match": ["true"]
+                }
+            },
+            {
+                "id": "166842c0-83ce-4e1b-a253-3fc58092abe1",
+                "name": "Allowed Protocol Mapper Types",
+                "providerId": "allowed-protocol-mappers",
+                "subType": "authenticated",
+                "subComponents": {},
+                "config": {
+                    "allowed-protocol-mapper-types": [
+                        "oidc-full-name-mapper",
+                        "saml-user-property-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "saml-user-attribute-mapper",
+                        "oidc-usermodel-property-mapper",
+                        "oidc-address-mapper",
+                        "oidc-sha256-pairwise-sub-mapper"
+                    ]
+                }
+            }
+        ],
+        "org.keycloak.userprofile.UserProfileProvider": [
+            {
+                "id": "d8305a8d-d7b1-410b-8bf3-6ada75746ed3",
+                "providerId": "declarative-user-profile",
+                "subComponents": {},
+                "config": {
+                    "kc.user.profile.config": [
+                        "{\"attributes\":[{\"name\":\"email\",\"displayName\":\"${email}\",\"validations\":{\"email\":{},\"length\":{\"max\":255}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"firstName\",\"displayName\":\"${firstName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"username\",\"displayName\":\"${username}\",\"validations\":{\"length\":{\"min\":3,\"max\":255},\"username-prohibited-characters\":{},\"up-username-not-idn-homograph\":{}},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"lastName\",\"displayName\":\"${lastName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false}],\"groups\":[{\"name\":\"user-metadata\",\"displayHeader\":\"User metadata\",\"displayDescription\":\"Attributes, which refer to user metadata\"}]}"
+                    ]
+                }
+            }
+        ],
+        "org.keycloak.keys.KeyProvider": [
+            {
+                "id": "cc6d6470-bc73-4c24-bb74-28b79dd14799",
+                "name": "aes-generated",
+                "providerId": "aes-generated",
+                "subComponents": {},
+                "config": {
+                    "priority": ["100"]
+                }
+            },
+            {
+                "id": "77ee8404-ac7b-4d45-b147-1173eb12983d",
+                "name": "rsa-enc-generated",
+                "providerId": "rsa-enc-generated",
+                "subComponents": {},
+                "config": {
+                    "priority": ["100"],
+                    "algorithm": ["RSA-OAEP"]
+                }
+            },
+            {
+                "id": "d3ba33a8-8c17-43a5-a9cb-dd40444e69b7",
+                "name": "rsa-generated",
+                "providerId": "rsa-generated",
+                "subComponents": {},
+                "config": {
+                    "priority": ["100"]
+                }
+            },
+            {
+                "id": "5c8ae614-13a1-4fb6-b4a0-8fd340d28a4a",
+                "name": "hmac-generated-hs512",
+                "providerId": "hmac-generated",
+                "subComponents": {},
+                "config": {
+                    "priority": ["100"],
+                    "algorithm": ["HS512"]
+                }
+            }
+        ]
+    },
+    "internationalizationEnabled": false,
+    "supportedLocales": [],
+    "authenticationFlows": [
+        {
+            "id": "0132f8cb-3bc0-4624-bf12-ad3bd4bed710",
+            "alias": "Account verification options",
+            "description": "Method with which to verity the existing account",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "idp-email-verification",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Verify Existing Account by Re-authentication",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "4e33bdf6-e010-4254-a7c4-3c8d5a18a7d4",
+            "alias": "Browser - Conditional OTP",
+            "description": "Flow to determine if the OTP is required for the authentication",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "conditional-user-configured",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "auth-otp-form",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "2a023672-2cea-4894-9654-90eb0448e59c",
+            "alias": "Direct Grant - Conditional OTP",
+            "description": "Flow to determine if the OTP is required for the authentication",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "conditional-user-configured",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "direct-grant-validate-otp",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "d17fdc39-8f81-447f-9859-1f616a1b5fab",
+            "alias": "First broker login - Conditional OTP",
+            "description": "Flow to determine if the OTP is required for the authentication",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "conditional-user-configured",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "auth-otp-form",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "1e2f0f70-844c-4b26-97ba-5799c95fb087",
+            "alias": "Handle Existing Account",
+            "description": "Handle what to do if there is existing account with same email/username like authenticated identity provider",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "idp-confirm-link",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Account verification options",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "f0e6288f-9f9e-4376-8d16-ed6b2b3f1196",
+            "alias": "Reset - Conditional OTP",
+            "description": "Flow to determine if the OTP should be reset or not. Set to REQUIRED to force.",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "conditional-user-configured",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "reset-otp",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "c44d74b1-23fc-4e03-9c36-4a48e206709b",
+            "alias": "User creation or linking",
+            "description": "Flow for the existing/non-existing user alternatives",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticatorConfig": "create unique user config",
+                    "authenticator": "idp-create-user-if-unique",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Handle Existing Account",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "0d07c18d-3c1a-4e6f-b0a3-f7c2d99bec66",
+            "alias": "Verify Existing Account by Re-authentication",
+            "description": "Reauthentication of existing account",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "idp-username-password-form",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "CONDITIONAL",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "First broker login - Conditional OTP",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "ebd59df0-55da-4ea3-8cdf-277560476db0",
+            "alias": "browser",
+            "description": "browser based authentication",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "auth-cookie",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "auth-spnego",
+                    "authenticatorFlow": false,
+                    "requirement": "DISABLED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "identity-provider-redirector",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 25,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 30,
+                    "autheticatorFlow": true,
+                    "flowAlias": "forms",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "b5e855ad-fd87-4c09-bc9b-ff9e722d0b17",
+            "alias": "clients",
+            "description": "Base authentication for clients",
+            "providerId": "client-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "client-secret",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "client-jwt",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "client-secret-jwt",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 30,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "client-x509",
+                    "authenticatorFlow": false,
+                    "requirement": "ALTERNATIVE",
+                    "priority": 40,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "f43959d6-c82b-4ae5-b161-206926764dfd",
+            "alias": "direct grant",
+            "description": "OpenID Connect Resource Owner Grant",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "direct-grant-validate-username",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "direct-grant-validate-password",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "CONDITIONAL",
+                    "priority": 30,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Direct Grant - Conditional OTP",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "eabb0d73-dd1e-433c-b908-cb30cde6ab89",
+            "alias": "docker auth",
+            "description": "Used by Docker clients to authenticate against the IDP",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "docker-http-basic-authenticator",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "67259388-70a3-42b5-8dc3-7487909139fe",
+            "alias": "first broker login",
+            "description": "Actions taken after first broker login with identity provider account, which is not yet linked to any Keycloak account",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticatorConfig": "review profile config",
+                    "authenticator": "idp-review-profile",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "User creation or linking",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "488d5e87-ca39-4e5f-8036-870b17abf6c6",
+            "alias": "forms",
+            "description": "Username, password, otp and other auth forms.",
+            "providerId": "basic-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "auth-username-password-form",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "CONDITIONAL",
+                    "priority": 20,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Browser - Conditional OTP",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "0fca1ef1-8c17-4fbc-acb4-483a27ec1026",
+            "alias": "registration",
+            "description": "registration flow",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "registration-page-form",
+                    "authenticatorFlow": true,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": true,
+                    "flowAlias": "registration form",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "4ba3a868-69b3-4740-b172-1baa7f3cf741",
+            "alias": "registration form",
+            "description": "registration form",
+            "providerId": "form-flow",
+            "topLevel": false,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "registration-user-creation",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "registration-password-action",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 50,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "registration-recaptcha-action",
+                    "authenticatorFlow": false,
+                    "requirement": "DISABLED",
+                    "priority": 60,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "registration-terms-and-conditions",
+                    "authenticatorFlow": false,
+                    "requirement": "DISABLED",
+                    "priority": 70,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "ddd9fd64-74da-401f-8162-25549479b707",
+            "alias": "reset credentials",
+            "description": "Reset credentials for a user if they forgot their password or something",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "reset-credentials-choose-user",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "reset-credential-email",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 20,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticator": "reset-password",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 30,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                },
+                {
+                    "authenticatorFlow": true,
+                    "requirement": "CONDITIONAL",
+                    "priority": 40,
+                    "autheticatorFlow": true,
+                    "flowAlias": "Reset - Conditional OTP",
+                    "userSetupAllowed": false
+                }
+            ]
+        },
+        {
+            "id": "3305e67f-bb46-43b4-9c47-fa63febbd524",
+            "alias": "saml ecp",
+            "description": "SAML ECP Profile Authentication Flow",
+            "providerId": "basic-flow",
+            "topLevel": true,
+            "builtIn": true,
+            "authenticationExecutions": [
+                {
+                    "authenticator": "http-basic-authenticator",
+                    "authenticatorFlow": false,
+                    "requirement": "REQUIRED",
+                    "priority": 10,
+                    "autheticatorFlow": false,
+                    "userSetupAllowed": false
+                }
+            ]
+        }
+    ],
+    "authenticatorConfig": [
+        {
+            "id": "6843d940-7e90-4b01-849f-522e67706375",
+            "alias": "create unique user config",
+            "config": {
+                "require.password.update.after.registration": "false"
+            }
+        },
+        {
+            "id": "57e5c728-0a4a-4425-829b-6783a8a13865",
+            "alias": "review profile config",
+            "config": {
+                "update.profile.on.first.login": "missing"
+            }
+        }
+    ],
+    "requiredActions": [
+        {
+            "alias": "CONFIGURE_TOTP",
+            "name": "Configure OTP",
+            "providerId": "CONFIGURE_TOTP",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 10,
+            "config": {}
+        },
+        {
+            "alias": "TERMS_AND_CONDITIONS",
+            "name": "Terms and Conditions",
+            "providerId": "TERMS_AND_CONDITIONS",
+            "enabled": false,
+            "defaultAction": false,
+            "priority": 20,
+            "config": {}
+        },
+        {
+            "alias": "UPDATE_PASSWORD",
+            "name": "Update Password",
+            "providerId": "UPDATE_PASSWORD",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 30,
+            "config": {}
+        },
+        {
+            "alias": "UPDATE_PROFILE",
+            "name": "Update Profile",
+            "providerId": "UPDATE_PROFILE",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 40,
+            "config": {}
+        },
+        {
+            "alias": "VERIFY_EMAIL",
+            "name": "Verify Email",
+            "providerId": "VERIFY_EMAIL",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 50,
+            "config": {}
+        },
+        {
+            "alias": "delete_account",
+            "name": "Delete Account",
+            "providerId": "delete_account",
+            "enabled": false,
+            "defaultAction": false,
+            "priority": 60,
+            "config": {}
+        },
+        {
+            "alias": "webauthn-register",
+            "name": "Webauthn Register",
+            "providerId": "webauthn-register",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 70,
+            "config": {}
+        },
+        {
+            "alias": "webauthn-register-passwordless",
+            "name": "Webauthn Register Passwordless",
+            "providerId": "webauthn-register-passwordless",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 80,
+            "config": {}
+        },
+        {
+            "alias": "VERIFY_PROFILE",
+            "name": "Verify Profile",
+            "providerId": "VERIFY_PROFILE",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 90,
+            "config": {}
+        },
+        {
+            "alias": "delete_credential",
+            "name": "Delete Credential",
+            "providerId": "delete_credential",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 100,
+            "config": {}
+        },
+        {
+            "alias": "update_user_locale",
+            "name": "Update User Locale",
+            "providerId": "update_user_locale",
+            "enabled": true,
+            "defaultAction": false,
+            "priority": 1000,
+            "config": {}
+        }
+    ],
+    "browserFlow": "browser",
+    "registrationFlow": "registration",
+    "directGrantFlow": "direct grant",
+    "resetCredentialsFlow": "reset credentials",
+    "clientAuthenticationFlow": "clients",
+    "dockerAuthenticationFlow": "docker auth",
+    "firstBrokerLoginFlow": "first broker login",
+    "attributes": {
+        "cibaBackchannelTokenDeliveryMode": "poll",
+        "cibaAuthRequestedUserHint": "login_hint",
+        "oauth2DevicePollingInterval": "5",
+        "clientOfflineSessionMaxLifespan": "0",
+        "clientSessionIdleTimeout": "0",
+        "actionTokenGeneratedByUserLifespan.verify-email": "",
+        "actionTokenGeneratedByUserLifespan.idp-verify-account-via-email": "",
+        "clientOfflineSessionIdleTimeout": "0",
+        "actionTokenGeneratedByUserLifespan.execute-actions": "",
+        "cibaInterval": "5",
+        "realmReusableOtpCode": "false",
+        "cibaExpiresIn": "120",
+        "oauth2DeviceCodeLifespan": "780",
+        "parRequestUriLifespan": "60",
+        "clientSessionMaxLifespan": "0",
+        "organizationsEnabled": "false",
+        "shortVerificationUri": "",
+        "actionTokenGeneratedByUserLifespan.reset-credentials": ""
+    },
+    "keycloakVersion": "25.0.1",
+    "userManagedAccessAllowed": false,
+    "organizationsEnabled": false,
+    "clientProfiles": {
+        "profiles": []
+    },
+    "clientPolicies": {
+        "policies": []
+    }
+}

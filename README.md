@@ -94,6 +94,6 @@ Berikut adalah hasil pengujian yang dijalankan:
 
 ## Kontak
 
-Muhammad Fikri - www.linkedin.com/in/mfikridevapp - mfikri.dev@gmail.com
+Muhammad Fikri - [LinkedIn](www.linkedin.com/in/mfikridevapp) - mfikri.dev@gmail.com
 
-Link Proyek: https://github.com/abdullahfikri/widuri-estock-backend
+Link Proyek: [iraise-microservice](https://github.com/abdullahfikri/iraise-microservice)
